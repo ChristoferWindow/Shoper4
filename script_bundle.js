@@ -1,7 +1,4 @@
 
-
-
-
       function main_assign()
       {
         var tes_exi = document.getElementById('option_10');
@@ -20,10 +17,12 @@
         }
 
       }
-      function main_infobtn()
+             function main_infobtn()
       {
-        if($('#war_stats').length>0)
+    	  $('.ico_js_a').css('display','none');
+        if($('#war_stats').length)
         {
+          $('.ico_js_a').css('display','visible');
           if($('#war_stats').attr('data-war_stats') == "tak")
           {
             show_warstats();
@@ -61,7 +60,9 @@
                   $(this).css('color','#1e9eec');
           });
           $('.ico_js_i_mocowanie').click(function(e){
-
+				$('.js_div_mocowanie').toggle("fast").siblings('div').slideUp();
+                $('.ico_js_i').css('color','#555555');
+                  $(this).css('color','#1e9eec');
           });
           //add mocowanie
           $('.ico_js_i_custom').click(function(e){
@@ -70,10 +71,16 @@
                   $(this).css('color','#1e9eec');
           });
 
-
         }
-      }
+
+
+
+}
       //get values from selection tag and assign sizes
+
+
+
+
       //index sizes from table
       function size_index(){
         let table = document.getElementsByClassName("product_table_cus");
@@ -192,7 +199,13 @@
              }
 
        }
-
+       function hide_others(obj_cl)
+       {
+         e.preventDefault();
+         let $this = $(this).parent().find('.js_div_box');
+         $('.js_div_box').not($this).slideUp();
+         $this.toggle();
+       }
 
 
        $(document).ready(main_assign);
