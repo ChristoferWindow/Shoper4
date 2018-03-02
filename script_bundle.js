@@ -47,15 +47,18 @@
 
           $('.ico_js_i_warianty').click(function(e){
               $('.js_div_warianty').toggle("fast").siblings('div').slideUp();
-              $(this).css('color','#1e9eec').siblings('.ico_js_a').css('color','#555555');
+              $('.ico_js_i').css('color','#555555');
+              $(this).css('color','#1e9eec');
           });
           $('.ico_js_i_material').click(function(e){
               $('.js_div_material').toggle("fast").siblings('div').slideUp();
-                  $(this).css('color','#1e9eec').siblings('.ico_js_a').css('color','#555555');
+                $('.ico_js_i').css('color','#555555');
+                  $(this).css('color','#1e9eec');
           });
           $('.ico_js_i_zmiana').click(function(e){
               $('.js_div_zmiana').toggle("fast").siblings('div').slideUp();
-                  $(this).css('color','#1e9eec').siblings('.ico_js_a').css('color','#555555');
+                $('.ico_js_i').css('color','#555555');
+                  $(this).css('color','#1e9eec');
           });
           $('.ico_js_i_mocowanie').click(function(e){
 
@@ -63,17 +66,14 @@
           //add mocowanie
           $('.ico_js_i_custom').click(function(e){
               $('.js_div_custom').toggle("fast").siblings('div').slideUp();
-                  $(this).css('color','#1e9eec').siblings('.ico_js_a').css('color','#555555');
+                $('.ico_js_i').css('color','#555555');
+                  $(this).css('color','#1e9eec');
           });
 
 
         }
       }
       //get values from selection tag and assign sizes
-
-
-
-
       //index sizes from table
       function size_index(){
         let table = document.getElementsByClassName("product_table_cus");
@@ -192,13 +192,7 @@
              }
 
        }
-       function hide_others(obj_cl)
-       {
-         e.preventDefault();
-         let $this = $(this).parent().find('.js_div_box');
-         $('.js_div_box').not($this).slideUp();
-         $this.toggle();
-       }
+
 
 
        $(document).ready(main_assign);
