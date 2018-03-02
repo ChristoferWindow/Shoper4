@@ -16,6 +16,15 @@
         }
 
       }
+      function main_infobtn()
+      {
+        show_warstats();
+        if($('#'))
+        {
+          $('.ico_js_i_warianty').click(show_warstats);
+        }
+
+      }
       //get values from selection tag and assign sizes
 
 
@@ -94,40 +103,42 @@
 
 
 
-        function show_warstats()
-        {
-          var war_stats = document.getElementById('war_stats');
-          var war_ins_box = document.getElementsByClassName('d');
-          var war_ile = war_stats.getAttribute('data-war_ile');
-          var war_best = war_stats.getAttribute('data-war_best');
-          var war_cheap = war_stats.getAttribute('data-war_cheap');
-          var war_ile_len = war_ile.length;
-          var war_best_len = war_best.length;
-          var war_cheap_len = war_cheap.length;
+
+       function show_warstats()
+       {
+         var war_stats = document.getElementById('war_stats');
+         var war_ins_box = document.getElementsByClassName('js_div_warianty');
+         var war_ile = war_stats.getAttribute('data-war_ile');
+         var war_best = war_stats.getAttribute('data-war_best');
+         var war_cheap = war_stats.getAttribute('data-war_cheap');
+         var war_ile_len = war_ile.length;
+         var war_best_len = war_best.length;
+         var war_cheap_len = war_cheap.length;
 
 
-          console.log('war_stat:'+war_stats+' war_inst_box:'+war_ins_box);
-          if(war_ile_len !==0  || war_best_len!==0 ||  war_cheap_len!==0)
-          {
-            console.log("inside");
-            war_ins_box[0].innerHTML += '<div class="prod_war_title">Szczegóły wariantów</br></div>';
-            if(war_ile_len!==0)
-            {
-              war_ins_box[0].innerHTML += '<div class="prod_war_obj"><div class="prod_war_obj_tit">Ilość wariantów:&nbsp; </div> <div class="prod_war_obj_par">'+war_ile+'</div></div>';
-            }
-            if(war_best_len!==0)
-            {
-              war_ins_box[0].innerHTML += '<div class="prod_war_obj"><div class="prod_war_obj_tit">Bestseller: &nbsp; </div>  <div class="prod_war_obj_par">'+war_best+'</div></div>';
-            }
-            if(war_cheap_len!==0)
-            {
-              war_ins_box[0].innerHTML += '<div class="prod_war_obj"><div class="prod_war_obj_tit">Najtańszy: &nbsp; </div><div class="prod_war_obj_par">'+war_cheap+'</div></div>';
-            }
-          }
+         console.log('war_stat:'+war_stats+' war_inst_box:'+war_ins_box);
+         if(war_ile_len !==0  || war_best_len!==0 ||  war_cheap_len!==0)
+         {
+           console.log("inside");
+           war_ins_box[0].innerHTML += '<div class="prod_war_title">Szczegóły wariantów</br></div>';
+           if(war_ile_len!==0)
+           {
+             war_ins_box[0].innerHTML += '<div class="prod_war_obj"><div class="prod_war_obj_tit">Ilość wariantów:&nbsp; </div> <div class="prod_war_obj_par">'+war_ile+'</div></div>';
+           }
+           if(war_best_len!==0)
+           {
+             war_ins_box[0].innerHTML += '<div class="prod_war_obj"><div class="prod_war_obj_tit">Bestseller: &nbsp; </div>  <div class="prod_war_obj_par">'+war_best+'</div></div>';
+           }
+           if(war_cheap_len!==0)
+           {
+             war_ins_box[0].innerHTML += '<div class="prod_war_obj"><div class="prod_war_obj_tit">Najtańszy: &nbsp; </div><div class="prod_war_obj_par">'+war_cheap+'</div></div>';
+           }
+         }
 
 
-        }
+       }
 
 
 
        $(document).ready(main_assign);
+       $(document).ready(main_infobtn);
