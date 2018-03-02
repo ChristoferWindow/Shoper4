@@ -43,6 +43,10 @@
           {
             show_sizestats();
           }
+          if($('#war_stats').attr('data-personalizacja')== "tak")
+          {
+            show_perstats();
+          }
 
           $('.ico_js_i_warianty').click(function(e){
               $('.js_div_warianty').toggle("fast").siblings('div').slideUp();
@@ -188,6 +192,23 @@
        {
 
 
+       }
+       function show_perstats()
+       {
+         let personalise = $('#war_stats');
+         let div_cus = document.getElementsByClassName('js_div_custom');
+         if(personalise.attr('data-inny-tekst')=="tak")
+         {
+           div_cus[0].innerHTML+='<p>Możliwość zmiany tekstu</p>';
+         }
+         if(personalise.attr('data-inny-ksztalt')=="tak")
+         {
+           div_cus[0].innerHTML+='<p>Możliwość zmiany kształtu</p>';
+         }
+         if(personalise.attr('data-inny-rozmiar')=="tak")
+         {
+           div_cus[0].innerHTML+='<p>Możliwość zmiany rozmiaru</p>';
+         }
        }
        function show_sizestats(obj)
        {
