@@ -52,7 +52,7 @@ function main_assign()
          {
            show_perstats();
          }
-        else if($('$war_stats').attr('data-personalizacja')!="tak")
+        else if($('#war_stats').attr('data-personalizacja')!="tak")
          {
               $('.ico_js_i_custom').closest('.ico_js_a').remove();
          }
