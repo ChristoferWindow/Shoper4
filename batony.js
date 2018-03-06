@@ -16,7 +16,7 @@ function main_assign()
        }
 
      }
-            function main_infobtn()
+      function main_infobtn()
      {
        $('.ico_js_a').css('display','none');
        if($('#war_stats').length)
@@ -60,7 +60,7 @@ function main_assign()
          {
 
          }
-         else if($('war_stats').attr('data-mocowanie')!="tal")
+         else if($('war_stats').attr('data-mocowanie')!="tak")
          {
            $('.ico_js_i_mocowanie').closest('.ico_js_a').remove();
          }
@@ -181,25 +181,23 @@ function main_assign()
         var war_ile = (war_stats.hasAttribute('data-war_ile'))? war_stats.getAttribute('data-war_ile'):0;
         var war_best = (war_stats.hasAttribute('data-war_best'))? war_stats.getAttribute('data-war_best'):0;
         var war_cheap = (war_stats.hasAttribute('data-war_cheap'))?war_stats.getAttribute('data-war_cheap'):0;
-        var war_ile_len = war_ile.length;
-        var war_best_len = war_best.length;
-        var war_cheap_len = war_cheap.length;
+
 
 
         console.log('war_stat:'+war_stats+' war_inst_box:'+war_ins_box);
-        if(war_ile_len !==0   || war_best_len!==0 ||  war_cheap_len!==0)
+        if(war_ile >0   || war_best >0 ||  war_cheap>0)
         {
           console.log("inside");
           war_ins_box[0].innerHTML +='<div class="prod_war_title">Szczegóły wariantów</br></div>';
-          if(war_ile_len>0)
+          if(war_ile.length>0)
           {
             war_ins_box[0].innerHTML +='<div class="prod_war_obj"><div class="prod_war_obj_tit">Ilość wariantów:&nbsp; </div> <div class="prod_war_obj_par">'+war_ile+'</div></div>';
           }
-          if(war_best_len>0)
+          if(war_best.length>0)
           {
                 war_ins_box[0].innerHTML +='<div class="prod_war_obj"><div class="prod_war_obj_tit">Bestseller: &nbsp; </div>  <div class="prod_war_obj_par">'+war_best+'</div></div>';
           }
-          if(war_cheap_len>0)
+          if(war_cheap.length>0)
           {
               war_ins_box[0].innerHTML +='<div class="prod_war_obj"><div class="prod_war_obj_tit">Najtańszy: &nbsp; </div><div class="prod_war_obj_par">'+war_cheap+'</div></div>';
           }
