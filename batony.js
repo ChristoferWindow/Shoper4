@@ -93,9 +93,12 @@ function main_assign()
         });
 
        }
-
-
-
+       else{
+         if(document.getElementById('przecenajs')==null || typeof(document.getElementById('przecenajs'))=='undefined')
+         {
+           $('.promo_container').css('display','none');
+         }
+       }
 }
      //get values from selection tag and assign sizes
 
@@ -229,6 +232,10 @@ function main_assign()
       {
             let index = size_index();
             let zmiana = document.getElementsByClassName('js_div_zmiana');
+            if($('#war_stats').attr('data-ulozenie')=="tak")
+            {
+              zmiana[0].innerHTML+='<div class="size_war_ulo">Możliwe jest inne ułożenie elementów.</div>';
+            }
             for(let i=0;i<index.length;i++)
             {
               zmiana[0].innerHTML+='<div class="size_war_obj"><div class="size_war_obj_let">'+index[i][0]+'</div><div class="size_war_obj_val">'+index[i][1]+'</div>';
