@@ -94,6 +94,7 @@ function main_assign()
 
        }
        else{
+         $('.dymek_css').css('border','none');
          if(document.getElementById('przecenajs')==null || typeof(document.getElementById('przecenajs'))=='undefined')
          {
            $('.promo_container').css('display','none');
