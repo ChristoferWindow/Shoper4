@@ -505,9 +505,11 @@ setInterval(GetClock,1000);
 
 
 <script>
-if($('.before-and-after')&& $('.subject-scraper') && $('.subject-after'))
-{
- var subject = document.querySelector('.before-and-after');
+
+
+if(subject!=null && scraper!=null && after!=null)
+{  
+var subject = document.querySelector('.before-and-after');
 var scraper = document.querySelector('.subject-scraper');
 var after = document.querySelector('.subject-after');
 
@@ -617,14 +619,15 @@ if($('#font_main_editor'))
 
       var positionUl = function() {
         var left, top;
-        left = $(root).offset().left;
-        top = $(root).offset().top + $(root).outerHeight();
+        console.log('ROOT:'+$(this).get(0));
+        left = $(this).offset().left;
+        top = $(this).offset().top + $(root).outerHeight();
 
         $(ul).css({
           'position': 'absolute',
           'left': left + 'px',
           'top': top + 'px',
-          'width': $(root).outerWidth() + 'px'
+          'width': $(this).outerWidth() + 'px'
         });
       }
 
